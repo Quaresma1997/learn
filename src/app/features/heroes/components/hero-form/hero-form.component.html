@@ -1,0 +1,19 @@
+<div *ngIf="hero">
+    <h2>{{ hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <form [formGroup]="form" novalidate (ngSubmit)="onSubmit(form)">
+      <div>
+        <label>name:
+          <input formControlName="name" placeholder="name"/>
+        </label>
+        <div
+            class="error"
+            *ngIf="nameControlInvalid">
+            <p>Hero must have a name</p>
+          </div>
+      </div>
+      <button (click)="back()" type="button">go back</button>&nbsp;
+      <button type="submit">save</button>
+    </form>
+    {{ form.value | json }}
+  </div>

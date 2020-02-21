@@ -1,0 +1,6 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+  <label>Hero name:
+    <input formControlName="name" />
+  </label>
+  <button type="submit">add</button>
+</form>
